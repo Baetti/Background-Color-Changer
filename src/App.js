@@ -1,24 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [bgColor, setBgColor] = useState("white");
+
+  const colorChange = (color) => {
+    setBgColor(color);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div
+        style={{ height: "100vh", backgroundColor: bgColor }}
+        className="d-flex justify-content-evenly align-items-center w-100"
+      >
+        <button
+          style={{ backgroundColor: "blue", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("blue")}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Blue
+        </button>
+        <button
+          style={{ backgroundColor: "yellow", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("yellow")}
+        >
+          Yellow
+        </button>
+        <button
+          style={{ backgroundColor: "green", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("green")}
+        >
+          Green
+        </button>
+        <button
+          style={{ backgroundColor: "red", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("red")}
+        >
+          Red
+        </button>
+        <button
+          style={{ backgroundColor: "black", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("black")}
+        >
+          Black
+        </button>
+        <button
+          style={{ backgroundColor: "indigo", color: "white" }}
+          className="btn"
+          onClick={() => colorChange("indigo")}
+        >
+          Violet
+        </button>
+      </div>
+    </>
   );
 }
 
